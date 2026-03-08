@@ -1,86 +1,89 @@
 ##########
-# collectionbuilder-csv
-# Jekyll Digital Collection Generator
-# https://github.com/CollectionBuilder/collectionbuilder-csv
-##########
-
-##########
-# URL VARIABLES
-#
-# site domain, full URL to the production location of your collection
-url: 
-# path to location on the domain if necessary e.g. /digital/hjccc
-baseurl: 
-# location of code, the full url to your github repository
-source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
-
-##########
 # SITE SETTINGS
-#
-# title of site appears in banner
-title: DH Atlas Türkiye
-# tagline, a short phrase that will appear throughout the site in the top banner
-tagline: Türkiye'de ve Türkiye Çalışmalarında Dijital Beşeri ve Sosyal Bilimler Atlası
-# description appears in meta tags and other locations
-# this description might appear in search result lists, keep around 160 characters max
-description: "Türkiye ve Türkiye Araştırmaları merkezli dijital beşeri ve sosyal bilimler proje, yayın, eğitim ve aktörler kataloğu.."
-# keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
-keywords: DH, DBB, AI, YZ, Türkiye
-# creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
-author: MÜ Dijital Beşeri Bilimler Araştırma Merkezi
+##########
+
+# URL of your CollectionBuilder site
+url: https://dbb-m.github.io
+# baseurl is the subpath of your site, e.g. /dh-atlas-turkiye
+baseurl: /dh-atlas-turkiye
+
+# Title of the site
+title: DH Atlas Turkiye
+# Tagline — Türkçe karakter kullanma, sorun çıkarabilir
+tagline: Turkiye Dijital Beseri Bilimler Haritasi
+# Short description
+description: Turkiye merkezli dijital beseri bilimler projelerinin katalogu.
+
+# Github username
+github-username: dbb-m
 
 ##########
 # COLLECTION SETTINGS
-#
-# Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
-# Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
+##########
+
+# metadata CSV dosya adı — _data/ klasöründeki dosya adıyla birebir aynı olmalı (.csv olmadan)
 metadata: DBB_Atlas_CB_ready
-# page generation settings [optional!]
-# [optional: only used if you need to tweak CB defaults or generate from more than one data file]
-# page_gen:
-#   - data: 'demo-metadata'
-#     template: 'item'
-#     name: 'objectid'
-#     dir: 'items'
-#     extension: 'html' 
-#     filter: 'objectid'  
 
 ##########
-# ORGANIZATION SETTINGS
-#
-# Enter name and link for your organization (replacing the name and links below)
-# These values will be used in attribution and data 
-organization-name: "Marmara University Center for Digital Humanities"
-organization-link: https://dbb.marmara.edu.tr/
-# Add logo image links if you would like them to appear in banner and footer. Delete or leave blank to remove logos.
-organization-logo-banner: https://dbb.marmara.edu.tr/dosya/dbb/dbb_dariah.jpg?_t=1770199846
-organization-logo-nav: https://dbb.marmara.edu.tr/dosya/dbb/DBB_DARIAH_ENG.png?_t=1770453496
-
+# MAP SETTINGS
 ##########
-# ROBOTS EXCLUDE
-#
-# set noindex to true if you do NOT want Google to index your site
-# noindex: true 
 
-##########
-# BUILD SETTINGS 
-#
-# Note: use environment variable on build command to include analytics
-# JEKYLL_ENV=production jekyll build
-# (this is done automatically by gh-pages build)
-#
-# Library directory location. This allows you to customize where the standard assets are found.
-# provide a relative path in this repository or full url 
-lib-assets: /assets/lib
-# ignore stuff
-exclude: [docs/, Rakefile, rakelib/, README.md, LICENSE, CITATION.cff, CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md]
-# compress CSS output
-sass:
-  style: compressed
+# Harita başlangıç koordinatları (Türkiye merkezi)
+latitude: 39.0
+longitude: 35.0
+zoom: 5
 
+# Koordinat sütunları
 latitude-field: latitude
 longitude-field: longitude
-title-field: title
-date-field: date
-description-field: description
 
+##########
+# ITEM PAGE SETTINGS
+##########
+
+# Hangi alan başlık olarak kullanılacak
+title-field: title
+# Hangi alan tarih olarak kullanılacak
+date-field: date
+# Hangi alan açıklama olarak kullanılacak
+description-field: description
+# Hangi alan konu olarak kullanılacak
+subject-field: subjects
+# Hangi alan konum olarak kullanılacak
+location-field: ulke_kurum
+# Hangi alan tür olarak kullanılacak
+object-type-field: format
+
+##########
+# BROWSE SETTINGS
+##########
+
+# Browse sayfasında görünecek alanlar (virgülle ayrılmış)
+browse-buttons: format;alan;erisim
+
+##########
+# JEKYLL SETTINGS
+##########
+
+# Bu satırları değiştirme
+permalink: /items/:name.html
+sass:
+  style: compressed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "*.gemspec"
+  - README.md
+  - rakelib/
+  - docs/
+  - node_modules/
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - CITATION.cff
+  - LICENSE
+  - SECURITY.md
+  - Rakefile
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
