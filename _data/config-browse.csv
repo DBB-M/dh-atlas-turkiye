@@ -1,7 +1,9 @@
-field,display_name,btn,hidden,sort_name,facet_name
-date,Date,,,Date Created
-description,,,true,
-creator,Creator,,,
-subject,,true
-location,,true,,,Location Depicted
-identifier,,,true,Identifier
+field,display_name,btn,hidden
+title,Başlık,,
+creator,Araştırmacı,,
+kurum,Kurum,,
+alan,Disiplin,,
+yontem,Yöntem,,
+format,Tür,,
+date,Yıl,,
+erisim,Erişim,,
