@@ -83,7 +83,3 @@ exclude:
   - LICENSE
   - SECURITY.md
   - Rakefile
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
