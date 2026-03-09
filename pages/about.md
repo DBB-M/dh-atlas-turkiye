@@ -55,17 +55,20 @@ Bu katalog, topluluk katkısıyla gelişen ve yaşayan bir kaynak olmayı hedefl
 - Mevcut bir kaydın güncellenmesi veya düzeltilmesi gerekiyor
 - Kendi çalışmanızın ya da kurumunuzun eklenmesini talep ediyorsunuz
 - Projeye iş birliği veya destek sağlamak istiyorsunuz
+</div>
 
 Aşağıdaki formu doldurun — ekibimiz en kısa sürede değerlendirerek kataloga ekleyecektir.
 
 ---
 
+
 ### 📋 Katkı ve Öneri Formu
 
-<form id="contributionForm" action="https://formspree.io/f/xdbbatlas" method="POST">
+<form id="contributionForm" action="https://formspree.io/f/xpqyqrbb" method="POST">
 
 <div class="form-grid">
 <div class="form-group">
+  
 <label for="ad">Ad Soyad *</label>
 <input type="text" id="ad" name="ad_soyad" required placeholder="Adınız Soyadınız">
 </div>
