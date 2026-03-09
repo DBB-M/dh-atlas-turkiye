@@ -1,6 +1,7 @@
 field,index,display,facet,multi-valued
 title,true,true,false,false
 creator,true,true,true,true
+calisma_ekibi,true,true,true,true
 kurum,true,true,true,false
 ulke_kurum,true,true,true,false
 format,true,true,true,false
