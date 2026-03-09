@@ -10,7 +10,7 @@ ulke_kurum,Ülke,true,,DCTERMS.coverage,contentLocation
 format,Tür,true,,DCTERMS.type,
 alan,Disiplin,true,,DCTERMS.subject,keywords
 yontem,Yöntem,true,,,
-date,Yıl,,,DCTERMS.date,dateCreated
+date,Yıl,true,,DCTERMS.date,dateCreated
 durum,Durum,true,,,
 erisim,Erişim,true,,DCTERMS.rights,license
 latitude,Enlem,,,,
