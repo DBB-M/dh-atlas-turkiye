@@ -4,8 +4,8 @@ layout: data
 permalink: /data.html
 ---
 
-## Collection Metadata
+## Katalog Üstverisi
 
-The table below provides sorting and basic search of the collection contents. 
-Use the "CSV" button below to download the filtered metadata you see on the page. 
-Alternatively, click the "Download" button at the top right to view the full collection metadata in various formats. 
+Aşağıdaki tablo, koleksiyon içeriğinin sıralanmasını ve temel aramasını sağlar.
+Sayfada gördüğünüz filtrelenmiş üstverileri indirmek için aşağıdaki "CSV" düğmesini kullanın.
+Alternatif olarak, sağ üstteki "İndir" düğmesini tıklayarak çeşitli formatlarda koleksiyonun tam üstverilerini görüntüleyebilirsiniz. 
