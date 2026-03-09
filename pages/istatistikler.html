@@ -1,0 +1,303 @@
+---
+title: İstatistikler
+layout: page
+permalink: /istatistikler.html
+---
+
+<style>
+  /* ── Genel ── */
+  .stats-page { font-family: 'Georgia', serif; color: #1a1a2e; }
+
+  /* ── Özet kartlar ── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0;
+  }
+  .summary-card {
+    background: linear-gradient(135deg, #1B4F72 0%, #2E86C1 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(27,79,114,0.25);
+    transition: transform 0.2s;
+  }
+  .summary-card:hover { transform: translateY(-3px); }
+  .summary-card .big { font-size: 2.4rem; font-weight: 700; line-height: 1; }
+  .summary-card .label { font-size: 0.82rem; opacity: 0.88; margin-top: 0.4rem; letter-spacing: 0.03em; }
+
+  /* ── Bölüm başlıkları ── */
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1B4F72;
+    border-left: 4px solid #2E86C1;
+    padding-left: 0.75rem;
+    margin: 2.5rem 0 1rem;
+  }
+
+  /* ── Grafik kartları ── */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .chart-card {
+    background: #fff;
+    border: 1px solid #e8ecf0;
+    border-radius: 10px;
+    padding: 1.2rem 1.2rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .chart-card h3 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1B4F72;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 1rem;
+  }
+  .chart-wrap { position: relative; height: 240px; }
+  .chart-wrap.tall { height: 300px; }
+  .chart-wrap.wide { height: 220px; }
+
+  /* ── Bar yatay ── */
+  .hbar-list { list-style: none; padding: 0; margin: 0; }
+  .hbar-item { margin-bottom: 0.55rem; }
+  .hbar-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.82rem; color: #444; margin-bottom: 2px;
+  }
+  .hbar-track {
+    background: #e9f0f7; border-radius: 4px; height: 10px; overflow: hidden;
+  }
+  .hbar-fill {
+    height: 100%; border-radius: 4px;
+    background: linear-gradient(90deg, #1B4F72, #2E86C1);
+    transition: width 0.8s ease;
+  }
+
+  /* ── Tablo ── */
+  .stats-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  .stats-table th {
+    background: #1B4F72; color: #fff;
+    padding: 0.5rem 0.75rem; text-align: left; font-weight: 600;
+  }
+  .stats-table td { padding: 0.45rem 0.75rem; border-bottom: 1px solid #eef1f4; }
+  .stats-table tr:nth-child(even) td { background: #f5f8fb; }
+  .stats-table tr:hover td { background: #e8f0f8; }
+
+  /* ── Zaman çizelgesi ── */
+  .full-width { grid-column: 1 / -1; }
+</style>
+
+<div class="stats-page">
+
+  <!-- ÖZET KARTLAR -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="big">266</div>
+      <div class="label">Toplam Çalışma</div>
+    </div>
+    <div class="summary-card">
+      <div class="big">524</div>
+      <div class="label">Araştırmacı</div>
+    </div>
+    <div class="summary-card">
+      <div class="big">13</div>
+      <div class="label">Disiplin Alanı</div>
+    </div>
+    <div class="summary-card">
+      <div class="big">17</div>
+      <div class="label">Yöntem</div>
+    </div>
+    <div class="summary-card">
+      <div class="big">%70</div>
+      <div class="label">Açık Erişim</div>
+    </div>
+    <div class="summary-card">
+      <div class="big">2020+</div>
+      <div class="label">En Yoğun Dönem</div>
+    </div>
+  </div>
+
+  <!-- SATIR 1: Disiplin + Yöntem -->
+  <p class="section-title">Disiplin ve Yöntem Dağılımı</p>
+  <div class="chart-grid">
+
+    <!-- Disiplin bar -->
+    <div class="chart-card">
+      <h3>Disiplin Alanına Göre</h3>
+      <ul class="hbar-list" id="alan-bars"></ul>
+    </div>
+
+    <!-- Yöntem bar -->
+    <div class="chart-card">
+      <h3>Kullanılan Yöntemler</h3>
+      <ul class="hbar-list" id="yontem-bars"></ul>
+    </div>
+
+  </div>
+
+  <!-- SATIR 2: Format + Erişim + Durum -->
+  <p class="section-title">Tür, Erişim ve Durum</p>
+  <div class="chart-grid">
+
+    <div class="chart-card">
+      <h3>Çalışma Türü</h3>
+      <div class="chart-wrap"><canvas id="formatChart"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Erişim Türü</h3>
+      <div class="chart-wrap"><canvas id="erisimChart"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Çalışma Durumu</h3>
+      <div class="chart-wrap"><canvas id="durumChart"></canvas></div>
+    </div>
+
+  </div>
+
+  <!-- SATIR 3: Yıllara göre -->
+  <p class="section-title">Yıllara Göre Yayın Yoğunluğu</p>
+  <div class="chart-grid">
+    <div class="chart-card full-width">
+      <h3>Yıl Bazlı Dağılım (2010–2026)</h3>
+      <div class="chart-wrap wide"><canvas id="yilChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- SATIR 4: Kurum tablosu + Ülke -->
+  <p class="section-title">Kurumlar ve Coğrafi Dağılım</p>
+  <div class="chart-grid">
+
+    <div class="chart-card">
+      <h3>En Aktif Kurumlar (İlk 12)</h3>
+      <table class="stats-table" id="kurumTable"></table>
+    </div>
+
+    <div class="chart-card">
+      <h3>Kurum Ülkesine Göre</h3>
+      <div class="chart-wrap tall"><canvas id="ulkeChart"></canvas></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const BLUE_PALETTE = [
+  '#1B4F72','#2E86C1','#5DADE2','#85C1E9','#AED6F1',
+  '#D6EAF8','#1A5276','#21618C','#2980B9','#7FB3D3',
+  '#154360','#A9CCE3'
+];
+const ACCENT = ['#1B4F72','#2E86C1','#E74C3C','#27AE60','#F39C12','#8E44AD'];
+
+// ── Yatay bar yardımcısı ──────────────────────────────
+function renderHBars(containerId, data, maxVal) {
+  const ul = document.getElementById(containerId);
+  const max = maxVal || Math.max(...Object.values(data));
+  Object.entries(data).forEach(([label, val]) => {
+    const pct = Math.round((val / max) * 100);
+    const li = document.createElement('li');
+    li.className = 'hbar-item';
+    li.innerHTML = `
+      <div class="hbar-label"><span>${label}</span><span><b>${val}</b></span></div>
+      <div class="hbar-track"><div class="hbar-fill" style="width:${pct}%"></div></div>`;
+    ul.appendChild(li);
+  });
+}
+
+// ── VERİ ─────────────────────────────────────────────
+const alan = {"Tarih":152,"Beşeri Bilimler":26,"Dil-Edebiyat":22,"İlahiyat":19,"Sosyal Bilimler":16,"Bilişim- Mühendislik":13,"Coğrafya":7,"Sosyoloji":4,"Arkeoloji":2,"Felsefe":2,"Hukuk":1,"Psikoloji":1,"Müzikoloji":1};
+const yontem = {"Mekânsal Analiz ve Haritalama":97,"Ağ ve İlişki Analizi":86,"Veri Tabanı- Korpus":58,"Metin ve Dil Analizi":57,"Literatür/Teori/Etkiler":39,"Yapay Zeka ve Makine Öğrenmesi":30,"Görüntü ve Görsel Veri":27,"Metin Madenciliği":4,"Doğal Dil İşleme":4,"Diğer":7};
+const format = {"Makale":144,"Proje":59,"Sunum-Bildiri":38,"Tez":16,"Eğitim":13,"Kitap":3,"Rapor":1};
+const erisim = {"Açık Erişim":186,"Sanal Erişim Yok":28,"Abone Erişimi":18};
+const durum = {"Tamamlandı":222,"Devam Ediyor":23,"Belirtilmemiş":21};
+const yilData = {"2010":2,"2011":3,"2012":5,"2013":3,"2014":6,"2015":11,"2016":9,"2017":14,"2018":12,"2019":10,"2020":27,"2021":29,"2022":40,"2023":36,"2024":18,"2025":34,"2026":1};
+const ulke = {"Türkiye":144,"Amerika":15,"Almanya":6,"İngiltere":2,"Yunanistan":2,"Fransa":1,"Avusturya":1,"Kanada":1,"İtalya":1,"ABD":1};
+const kurum = {"Marmara Üniversitesi":38,"DBB Araştırma Merkezi":26,"Koç Üniversitesi":13,"Sabancı Üniversitesi":9,"İstanbul Üniversitesi":9,"Hacettepe Üniversitesi":9,"İstanbul Medeniyet Üniversitesi":7,"University of Washington":5,"Orta Doğu Teknik Üniversitesi":5,"Bilkent Üniversitesi":4,"Boğaziçi Üniversitesi":4,"Stanford Üniversitesi":4};
+
+// ── Yatay barlar ──────────────────────────────────────
+renderHBars('alan-bars', alan);
+renderHBars('yontem-bars', yontem);
+
+// ── Format donut ──────────────────────────────────────
+new Chart(document.getElementById('formatChart'), {
+  type: 'doughnut',
+  data: { labels: Object.keys(format), datasets: [{ data: Object.values(format), backgroundColor: BLUE_PALETTE, borderWidth: 2, borderColor: '#fff' }] },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { font: { size: 11 }, boxWidth: 12 } } } }
+});
+
+// ── Erişim donut ──────────────────────────────────────
+new Chart(document.getElementById('erisimChart'), {
+  type: 'doughnut',
+  data: { labels: Object.keys(erisim), datasets: [{ data: Object.values(erisim), backgroundColor: ['#1B4F72','#E74C3C','#F39C12'], borderWidth: 2, borderColor: '#fff' }] },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { font: { size: 11 }, boxWidth: 12 } } } }
+});
+
+// ── Durum pie ─────────────────────────────────────────
+new Chart(document.getElementById('durumChart'), {
+  type: 'pie',
+  data: { labels: Object.keys(durum), datasets: [{ data: Object.values(durum), backgroundColor: ['#27AE60','#F39C12','#BDC3C7'], borderWidth: 2, borderColor: '#fff' }] },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { font: { size: 11 }, boxWidth: 12 } } } }
+});
+
+// ── Yıl bar ───────────────────────────────────────────
+new Chart(document.getElementById('yilChart'), {
+  type: 'bar',
+  data: {
+    labels: Object.keys(yilData),
+    datasets: [{
+      label: 'Çalışma Sayısı',
+      data: Object.values(yilData),
+      backgroundColor: Object.keys(yilData).map(y => parseInt(y) >= 2020 ? '#1B4F72' : '#AED6F1'),
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  }
+});
+
+// ── Ülke bar yatay ────────────────────────────────────
+new Chart(document.getElementById('ulkeChart'), {
+  type: 'bar',
+  data: {
+    labels: Object.keys(ulke),
+    datasets: [{ label: 'Çalışma', data: Object.values(ulke), backgroundColor: BLUE_PALETTE, borderRadius: 4 }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { beginAtZero: true, grid: { color: '#f0f0f0' }, ticks: { font: { size: 10 } } },
+      y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+// ── Kurum tablosu ────────────────────────────────────
+const tbl = document.getElementById('kurumTable');
+tbl.innerHTML = '<thead><tr><th>Kurum</th><th>Çalışma</th></tr></thead>';
+const tbody = document.createElement('tbody');
+Object.entries(kurum).forEach(([k,v]) => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${k}</td><td><b>${v}</b></td>`;
+  tbody.appendChild(tr);
+});
+tbl.appendChild(tbody);
+</script>
