@@ -5,7 +5,7 @@ permalink: /data.html
 ---
 <div style="text-align:center; padding:4rem 1rem; color:#888;">
   <h2>🔒 Bu sayfa şu an erişime kapalıdır.</h2>
-  <p>Ham veriye erişim için <a href="/about.html">bizimle iletişime geçin</a>.</p>
+  <p>Ham veriye erişim için <a href="https://dbb-m.github.io/dh-atlas-turkiye/about.html">bizimle iletişime geçin</a>.</p>
 </div>
 
 
