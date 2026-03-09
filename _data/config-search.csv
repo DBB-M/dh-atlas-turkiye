@@ -9,5 +9,5 @@ alan,true,true,true,false
 yontem,true,true,true,true
 durum,true,true,true,false
 erisim,true,true,true,false
-date,true,true,false,false
+date,true,true,true,true
 description,true,false,false,false
