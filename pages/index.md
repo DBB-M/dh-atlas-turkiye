@@ -81,6 +81,109 @@ permalink: /
   .dbb-logo-box img { height: 62px; }
   .dbb-logo-box { padding: 0.8rem 1.2rem; }
 }
+/* ── BROWSE KARTLARI ─────────────────────────────── */
+
+/* Kart genel */
+.card {
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  overflow: hidden !important;
+}
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(27,79,114,0.18) !important;
+}
+
+/* Üst renkli şerit — format'a göre */
+.card::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, #1B4F72, #2E86C1);
+}
+
+/* Format renkleri: data-format attribute yoksa CSS ile yakala */
+.card-title { font-size: 0.95rem !important; font-weight: 700 !important; color: #1a1a2e !important; line-height: 1.4 !important; }
+.card-text { font-size: 0.82rem !important; color: #444 !important; }
+.card-text strong { color: #1B4F72 !important; }
+
+/* Görsel ikonu gizle, yerine format badge koy */
+.card .card-img-top,
+.card img[src*="svg"],
+.card img[alt=""] {
+  display: none !important;
+}
+
+/* ITEM butonu */
+.card .btn {
+  background: #1B4F72 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.78rem !important;
+  padding: 0.35rem 0.85rem !important;
+  font-weight: 600 !important;
+}
+.card .btn:hover {
+  background: #2E86C1 !important;
+}
+
+/* Format badge — Erişim satırından önce renkli kutu */
+.card-body::before {
+  content: attr(data-format);
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+  background: #EBF5FB;
+  color: #1B4F72;
+}
+
+/* Erişim renk vurgulama */
+.card-text:last-of-type { margin-bottom: 0.75rem !important; }
+
+/* Açık Erişim → yeşil nokta */
+.card:has(.card-text:-webkit-any(strong)) {}
+
+/* ── CB SAĞ KOLON WIDGETlari override ───────────────── */
+.col-md-4 .card { border: none !important; border-radius: 10px !important; box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important; margin-bottom: 1rem !important; }
+.col-md-4 .card::before { display: none !important; }
+.col-md-4 .card-body { padding: 1rem 1.1rem !important; }
+.col-md-4 .card-title, .col-md-4 h2.h5, .col-md-4 h3.h5 {
+  font-size: 0.7rem !important; font-weight: 700 !important; letter-spacing: 0.08em !important;
+  text-transform: uppercase !important; color: #1B4F72 !important;
+  border-left: 3px solid #2E86C1 !important; padding-left: 0.5rem !important; margin-bottom: 0.75rem !important;
+}
+.col-md-4 .card-body h3 { font-size: 1.5rem !important; font-weight: 800 !important; color: #1a1a2e !important; margin: 0 0 0.1rem !important; }
+.col-md-4 .card-body h3 a { color: #1B4F72 !important; text-decoration: none !important; }
+.col-md-4 .btn-outline-primary, .col-md-4 a.btn-outline-primary,
+.col-md-4 .btn-outline-secondary:not(.m-1) {
+  font-size: 0.75rem !important; padding: 0.3rem 0.85rem !important; border-radius: 6px !important;
+  border-color: #1B4F72 !important; color: #1B4F72 !important; font-weight: 600 !important; background: #fff !important;
+}
+.col-md-4 .btn-outline-primary:hover { background: #1B4F72 !important; color: #fff !important; }
+.col-md-4 .btn-primary {
+  background: #1B4F72 !important; border-color: #1B4F72 !important;
+  font-size: 0.78rem !important; padding: 0.28rem 0.75rem !important;
+  border-radius: 20px !important; margin: 2px !important; font-weight: 600 !important;
+}
+.col-md-4 .btn-primary:hover { background: #2E86C1 !important; border-color: #2E86C1 !important; }
+.col-md-4 .btn-outline-secondary.m-1 {
+  border-color: #AED6F1 !important; color: #1B4F72 !important;
+  font-size: 0.78rem !important; padding: 0.28rem 0.75rem !important;
+  border-radius: 20px !important; margin: 2px !important; font-weight: 600 !important; background: #fff !important;
+}
+.col-md-4 .btn-outline-secondary.m-1:hover { background: #EBF5FB !important; }
+.col-md-4 .display-4 { font-size: 2rem !important; font-weight: 800 !important; color: #1B4F72 !important; }
+.col-md-4 .btn-light { font-size: 0.75rem !important; padding: 0.3rem 0.85rem !important; border-radius: 6px !important; background: #EBF5FB !important; color: #1B4F72 !important; border: 1px solid #dce8f0 !important; font-weight: 600 !important; }
+.col-md-4 .btn-light:hover { background: #AED6F1 !important; }
+
 </style>
 
 <!-- HERO -->
