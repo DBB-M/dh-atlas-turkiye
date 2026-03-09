@@ -222,6 +222,5 @@ permalink: /
     {% include index/content.html %}
   </div>
   <div class="col-md-12">
-    {% include index/data-download.html %}
   </div>
 </div>
