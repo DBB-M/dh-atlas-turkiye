@@ -4,7 +4,7 @@ description,Açıklama,,,DCTERMS.description,description
 calisma_link,Bağlantı,,true,DCTERMS.relation,url
 creator,Araştırmacı,true,,DCTERMS.creator,creator
 yy_link,Yazar Sayfası,,true,,
-calisma_ekibi,Çalışma Ekibi,,,,
+calisma_ekibi,Çalışma Ekibi,true,,,
 kurum,Kurum,true,,DCTERMS.publisher,
 ulke_kurum,Ülke,true,,DCTERMS.coverage,contentLocation
 format,Tür,true,,DCTERMS.type,
