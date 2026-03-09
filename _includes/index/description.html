@@ -1,21 +1,69 @@
-{% comment %} 
-
-    Collection Description card.
-    Pulls description from _config.yml. Provides btn link to About page if present in the config-nav.
-
-    E.G. --> {% include index/description.html %}
-    
-    Options: 
-
-    - "btn-color" - a bootstrap color class to theme the buttons. Can be any bootstrap template color (e.g. info, success) or outline (e.g. outline-info, outline-success), including colors created in config-theme-colors. (optional, default "primary")
-    - "heading_level" = customize the level of the heading if necessary for accessibility, choose "h1", "h2", "h3", etc (optional, default "h2")
-
+{%- comment -%}
+    Collection Description card — DH Atlas Türkiye özel tasarım
 {%- endcomment -%}
-<div class="card mb-3">
-    <div class="card-body">
-        <{{ include.heading_level | default: 'h2' | strip }} class="card-title h5">Description</{{ include.heading_level | default: 'h2' | strip }}>
-        <p class="card-text">{{ site.description }}</p>
-        {%- assign about = site.data.config-nav | where: "stub","/about.html" | size -%}{% if about > 0 %}
-        <a class="btn btn-{{ include.btn-color | default: 'primary' }}" href="{{ '/about.html' | relative_url }}" >Daha Fazla &raquo;</a>{% endif %}
+
+<div class="dbb-desc-card mb-3">
+  <div class="dbb-desc-inner">
+    <div class="dbb-desc-icon">🗺️</div>
+    <div>
+      <{{ include.heading_level | default: 'h2' | strip }} class="dbb-desc-title">Hakkında</{{ include.heading_level | default: 'h2' | strip }}>
+      <p class="dbb-desc-text">{{ site.description }}</p>
+      {%- assign about = site.data.config-nav | where: "stub","/about.html" | size -%}
+      {% if about > 0 %}
+      <a class="dbb-desc-btn" href="{{ '/about.html' | relative_url }}">Daha Fazla →</a>
+      {% endif %}
     </div>
+  </div>
 </div>
+
+<style>
+.dbb-desc-card {
+  border-left: 4px solid #1B4F72;
+  background: linear-gradient(135deg, #f8fafc 0%, #EBF5FB 100%);
+  border-radius: 0 10px 10px 0;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(27,79,114,0.07);
+}
+.dbb-desc-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.dbb-desc-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+.dbb-desc-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1B4F72;
+  margin: 0 0 0.4rem;
+  border: none;
+  padding: 0;
+}
+.dbb-desc-text {
+  font-size: 0.92rem;
+  color: #333;
+  line-height: 1.7;
+  margin: 0 0 0.85rem;
+}
+.dbb-desc-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: #1B4F72;
+  color: #fff !important;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.18s;
+}
+.dbb-desc-btn:hover {
+  background: #2E86C1;
+  text-decoration: none !important;
+}
+</style>
