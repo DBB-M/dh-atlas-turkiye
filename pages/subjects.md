@@ -7,7 +7,7 @@ permalink: /subjects.html
 cloud-fields: site.data.theme.subjects-fields
 ---
 
-## Browse Subjects
+## Kişilere Bak
 
-Use this word cloud visualization to browse terms and subjects.
-Word size is determined by frequency and all words link to a corresponding collection search.
+Bu kelime bulutu görselleştirmesini kullanarak kişileri tarayın.
+Kelime boyutu sıklığa göre belirlenir ve tüm kelimeler ilgili koleksiyon aramasına bağlanır.
