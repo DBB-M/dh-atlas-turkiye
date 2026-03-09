@@ -1,6 +1,9 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
 title,Başlık,,,DCTERMS.title,headline
+description,Açıklama,,,DCTERMS.description,description
+calisma_link,Bağlantı,,true,DCTERMS.relation,url
 creator,Araştırmacı,true,,DCTERMS.creator,creator
+yy_link,Yazar Sayfası,,true,,
 calisma_ekibi,Çalışma Ekibi,,,,
 kurum,Kurum,true,,DCTERMS.publisher,
 ulke_kurum,Ülke,true,,DCTERMS.coverage,contentLocation
@@ -10,8 +13,5 @@ yontem,Yöntem,true,,,
 date,Yıl,,,DCTERMS.date,dateCreated
 durum,Durum,true,,,
 erisim,Erişim,true,,DCTERMS.rights,license
-description,Açıklama,,,DCTERMS.description,description
-calisma_link,Bağlantı,,true,DCTERMS.relation,url
-yy_link,Yazar Sayfası,,true,,
 latitude,Enlem,,,,
 longitude,Boylam,,,,
