@@ -1,8 +1,8 @@
 display_name,stub,dropdown_parent
 Ana Sayfa,/,
 Keşfet,/browse.html,
+İstatistikler,/istatistikler.html,
 Kişiler,/subjects.html,
-Locations,/locations.html,
 Harita,/map.html,
 Kronoloji,/timeline.html,
 Veri,/data.html,
