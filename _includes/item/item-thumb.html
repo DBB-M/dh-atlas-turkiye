@@ -1,16 +1,84 @@
 {% comment %}
-
-    Add a thumbnail image or icon based on format for an item, with a object_location link (if available).
-
+    Format'a göre renkli hero banner — görsel yoksa SVG ikonu yerine kullanılır.
 {% endcomment %}
-{% if page.object_location %}<a href="{{ page.object_location | relative_url }}" target="_blank" rel="noopener">{% endif %}
-    {% if page.image_thumb or page.image_small %}
+{% if page.image_thumb or page.image_small %}
+    {% if page.object_location %}<a href="{{ page.object_location | relative_url }}" target="_blank" rel="noopener">{% endif %}
     <img class="img-thumbnail" src="{{ page.image_small | default: page.image_thumb | relative_url }}" alt="{{ page.image_alt_text | default: page.description | default: page.title | escape }}">
-    {% else %}
-    <svg class="bi text-body" fill="currentColor" aria-hidden="true">
-        {%- assign icon_template = page.display_template | default: page.format -%}
-        <use xlink:href="{{ '/assets/css/cb-icons.svg' | relative_url }}#{% if icon_template contains 'image' %}icon-image{% elsif icon_template contains 'pdf' %}icon-pdf{% elsif icon_template contains 'audio' %}icon-audio{% elsif icon_template contains 'video' %}icon-video{% elsif icon_template contains 'record' %}icon-record{% else %}icon-default{% endif %}"/>
-    </svg>
-    <span class="visually-hidden">{{ page.title | escape }} - {{ page.format }}</span>
-    {% endif %}
-{% if page.object_location %}</a>{% endif %}
+    {% if page.object_location %}</a>{% endif %}
+{% else %}
+
+{%- assign fmt = page.format | downcase -%}
+{%- if fmt contains 'makale' %}
+  {%- assign bg = '#1B4F72' %}{%- assign icon = '📄' %}{%- assign label = 'Makale' %}
+{%- elsif fmt contains 'proje' %}
+  {%- assign bg = '#1E8449' %}{%- assign icon = '🗂️' %}{%- assign label = 'Proje' %}
+{%- elsif fmt contains 'tez' %}
+  {%- assign bg = '#6C3483' %}{%- assign icon = '🎓' %}{%- assign label = 'Tez' %}
+{%- elsif fmt contains 'sunum' or fmt contains 'bildiri' %}
+  {%- assign bg = '#B7950B' %}{%- assign icon = '🎤' %}{%- assign label = 'Sunum / Bildiri' %}
+{%- elsif fmt contains 'kitap' %}
+  {%- assign bg = '#922B21' %}{%- assign icon = '📚' %}{%- assign label = 'Kitap' %}
+{%- elsif fmt contains 'rapor' %}
+  {%- assign bg = '#117A65' %}{%- assign icon = '📋' %}{%- assign label = 'Rapor' %}
+{%- elsif fmt contains 'veri' or fmt contains 'data' %}
+  {%- assign bg = '#1A5276' %}{%- assign icon = '🗄️' %}{%- assign label = 'Veri Seti' %}
+{%- else %}
+  {%- assign bg = '#424949' %}{%- assign icon = '📁' %}{%- assign label = page.format %}
+{%- endif %}
+
+<div class="dbb-item-banner" style="background: {{ bg }};">
+  <div class="dbb-item-banner-icon">{{ icon }}</div>
+  <div class="dbb-item-banner-label">{{ label }}</div>
+  {% if page.date %}<div class="dbb-item-banner-date">{{ page.date }}</div>{% endif %}
+  {% if page.object_location %}
+  <a href="{{ page.object_location }}" target="_blank" rel="noopener" class="dbb-item-banner-btn">Kaynağa Git →</a>
+  {% endif %}
+</div>
+
+<style>
+.dbb-item-banner {
+  border-radius: 10px;
+  padding: 3rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 220px;
+  justify-content: center;
+}
+.dbb-item-banner-icon { font-size: 3.5rem; line-height: 1; }
+.dbb-item-banner-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.15);
+  padding: 0.25rem 0.85rem;
+  border-radius: 20px;
+}
+.dbb-item-banner-date {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0.3rem;
+}
+.dbb-item-banner-btn {
+  margin-top: 0.8rem;
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  background: rgba(255,255,255,0.2);
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.18s;
+}
+.dbb-item-banner-btn:hover {
+  background: rgba(255,255,255,0.35);
+  text-decoration: none !important;
+}
+</style>
+{% endif %}
