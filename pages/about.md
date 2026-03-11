@@ -229,7 +229,10 @@ if (form) {
 <div class="team-card">Ecem Miray Biliz</div>
 <div class="team-card">Şeymanur Aydınhan</div>
 <div class="team-card">Şeyda Güneri</div>
-<div class="team-card">Betül Karaarslan</div>
+<div class="team-card">Betül Karaaslan</div>
+<div class="team-card">Ayşegül Çimen</div>
+<div class="team-card">Rümeysanur Erikli Doğan</div>
+<div class="team-card">Ahmet Baran Demir</div>
 </div>
 
 Projemize destek veren ve katkıda bulunan tüm araştırmacılara, <strong>Marmara Üniversitesi</strong>'ne, <strong>Dijital Beşeri Bilimler Araştırma Merkezi</strong> çalışanlarının tamamına ve bu katalogda yer alan çalışmaların sahiplerine içtenlikle teşekkür ederiz.
