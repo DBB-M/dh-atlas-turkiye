@@ -204,6 +204,7 @@ permalink: /
       <a href="browse.html" class="dbb-btn dbb-btn-p">Kataloğu Keşfet →</a>
       <a href="map.html" class="dbb-btn dbb-btn-o">Haritada Gör</a>
       <a href="istatistikler.html" class="dbb-btn dbb-btn-o">İstatistikler</a>
+      <a href="about.html" class="dbb-btn dbb-btn-o">Çalışmanı Paylaş ✚</a>
     </div>
   </div>
 </div>
