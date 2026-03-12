@@ -221,7 +221,4 @@ permalink: /
     {% include index/featured-terms.html featured="Mekânsal Analiz ve Haritalama;Ağ ve İlişki Analizi;Yapay Zeka ve Makine Öğrenmesi;Veri Tabanı- Korpus;Metin ve Dil Analizi;Literatür_Teori_Etkiler;Görüntü ve Görsel Veri" title="Yöntemler" btn-color="outline-secondary" %}
     {% include index/content.html %}
   </div>
-  <div class="col-md-12">
-    {% include index/data-download.html %}
-  </div>
 </div>
