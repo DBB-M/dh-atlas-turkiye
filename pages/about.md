@@ -36,13 +36,13 @@ credits: false
 
 <strong>DH Atlas Türkiye</strong>, Türkiye'de dijital beşeri ve sosyal bilimler alanında üretilen akademik çalışmaları—makaleler, projeler, tezler, sunumlar ve eğitimler—tek bir platformda bir araya getiren açık erişimli bir katalog ve harita projesidir.
 
-Bu atlas; araştırmacıların, kurumların ve çalışmaların görünürlüğünü artırmayı, alandaki boşlukları ve güçlü yönleri ortaya koymayı ve disiplinlerarası iş birliğinin önünü açmayı hedeflemektedir. İstatistikler menüsünden güncel rakamları görebileceğiniz veriyi kapsayan veri tabanı, Türkiye'deki dijital beşeri bilimler ekosisteminin bugüne kadarki en kapsamlı haritalama girişimini oluşturmaktadır.
+Bu atlas; araştırmacıların, kurumların ve çalışmaların görünürlüğünü artırmayı, alandaki boşlukları ve güçlü yönleri ortaya koymayı ve disiplinlerarası iş birliğinin önünü açmayı hedeflemektedir. 266 kayıt, 524 araştırmacı ve 13 disiplin alanını kapsayan veri tabanı, Türkiye'deki dijital beşeri bilimler ekosisteminin bugüne kadarki en kapsamlı haritalama girişimini oluşturmaktadır.
 
 <div class="about-card">
 <p>💡 <strong>Misyonumuz:</strong> Dijital beşeri bilimlerin Türkiye'deki gelişimini takip etmek, araştırmacılar ve kurumlar arasında iletişim ve iş birliği imkânlarını güçlendirmek; bu büyüyen alana yönelik farkındalığı artırmak.</p>
 </div>
 
-<p class="section-title">Dijital Beşeri Bilimler Araştırma Merkezi ve DARIAH</p>
+<p class="section-title">DARIAH-TR ve Dijital Beşeri Bilimler Araştırma Merkezi</p>
 
 <a class="dariah-badge" href="https://dbb.marmara.edu.tr" target="_blank">🔗 dbb.marmara.edu.tr</a>
 
@@ -68,7 +68,7 @@ Aşağıdaki formu doldurun — ekibimiz en kısa sürede değerlendirerek katal
 <div class="form-section">
 <h3 style="font-size:1.1rem; color:#1B4F72; margin:0 0 1.2rem;">📋 Katkı ve Öneri Formu</h3>
 
-<form id="contributionForm" action="https://formspree.io/f/xdbbatlas" method="POST">
+<form id="contributionForm" action="https://formspree.io/f/xpqyqrbb" method="POST">
 
 <p style="font-size:0.82rem; color:#666; margin:0 0 1.2rem; font-style:italic;">* ile işaretli alanlar zorunludur. Formu doldurmadan önce ilgili bölümleri atlayabilirsiniz.</p>
 
@@ -229,10 +229,7 @@ if (form) {
 <div class="team-card">Ecem Miray Biliz</div>
 <div class="team-card">Şeymanur Aydınhan</div>
 <div class="team-card">Şeyda Güneri</div>
-<div class="team-card">Betül Karaaslan</div>
-<div class="team-card">Ayşegül Çimen</div>
-<div class="team-card">Rümeysanur Erikli Doğan</div>
-<div class="team-card">Ahmet Baran Demir</div>
+<div class="team-card">Betül Karaarslan</div>
 </div>
 
 Projemize destek veren ve katkıda bulunan tüm araştırmacılara, <strong>Marmara Üniversitesi</strong>'ne, <strong>Dijital Beşeri Bilimler Araştırma Merkezi</strong> çalışanlarının tamamına ve bu katalogda yer alan çalışmaların sahiplerine içtenlikle teşekkür ederiz.
