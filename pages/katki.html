@@ -1,0 +1,238 @@
+---
+title: Çalışmanı Ekle
+layout: page
+permalink: /katki.html
+---
+
+<style>
+.katki-wrap { max-width: 780px; margin: 0 auto; padding: 0 1rem 3rem; font-family: Georgia, serif; }
+
+.katki-hero {
+  background: linear-gradient(135deg, #0d2137, #1B4F72);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+}
+.katki-hero h1 { font-size: 1.8rem; font-weight: 700; margin: 0 0 0.5rem; }
+.katki-hero p { font-size: 1rem; opacity: 0.85; margin: 0; }
+
+.katki-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.katki-info-card {
+  background: #f5f8fb;
+  border-left: 3px solid #2E86C1;
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.6;
+}
+.katki-info-card strong { color: #1B4F72; display: block; margin-bottom: 0.2rem; }
+
+.form-section { background: #f8fafc; border: 1px solid #dce8f0; border-radius: 12px; padding: 2rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: #1B4F72; margin-bottom: 0.3rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.6rem 0.85rem; border: 1px solid #c5d5e8;
+  border-radius: 6px; font-size: 0.9rem; font-family: inherit;
+  box-sizing: border-box; background: #fff; transition: border-color 0.15s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: #2E86C1; box-shadow: 0 0 0 3px rgba(46,134,193,0.12);
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.form-divider {
+  background: linear-gradient(90deg, #EBF5FB, #dce8f0);
+  border-radius: 6px; padding: 0.65rem 1rem;
+  margin: 1.5rem 0 1rem; font-size: 0.82rem; color: #1B4F72; font-weight: 700;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.btn-submit {
+  background: linear-gradient(135deg, #1B4F72, #2E86C1);
+  color: #fff; border: none; padding: 0.85rem 2.5rem;
+  border-radius: 8px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; transition: opacity 0.2s; letter-spacing: 0.02em;
+}
+.btn-submit:hover { opacity: 0.88; }
+.form-note { font-size: 0.8rem; color: #888; font-style: italic; margin: 0 0 1.5rem; }
+
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .katki-hero h1 { font-size: 1.4rem; }
+  .katki-info-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="katki-wrap">
+
+<div class="katki-hero">
+  <h1>✚ Çalışmanızı Kataloğa Ekleyin</h1>
+  <p>DH Atlas Türkiye, topluluk katkısıyla büyüyen bir katalogdur. Aşağıdaki formu doldurun.</p>
+</div>
+
+<div class="katki-info-grid">
+  <div class="katki-info-card">
+    <strong>📌 Yeni çalışma önerin</strong>
+    Katalogda yer almayan bir çalışmayı eklemek için formu doldurun.
+  </div>
+  <div class="katki-info-card">
+    <strong>✏️ Güncelleme isteyin</strong>
+    Mevcut bir kaydın düzeltilmesi için açıklama kutusuna belirtin.
+  </div>
+  <div class="katki-info-card">
+    <strong>🤝 İş birliği yapın</strong>
+    Projeye destek sağlamak istiyorsanız bize ulaşın.
+  </div>
+</div>
+
+<div class="form-section">
+
+<form id="contributionForm" action="https://formspree.io/f/xpqyqrbb" method="POST">
+
+<p class="form-note">* ile işaretli alanlar zorunludur.</p>
+
+<div class="form-divider">👤 Gönderen Bilgileri</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label for="ad">Ad Soyad *</label>
+<input type="text" id="ad" name="creator" required placeholder="Adınız Soyadınız">
+</div>
+<div class="form-group">
+<label for="email">E-posta *</label>
+<input type="email" id="email" name="_replyto" required placeholder="ornek@universite.edu.tr">
+</div>
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label for="kurum_gon">Kurumunuz</label>
+<input type="text" id="kurum_gon" name="gonderen_kurum" placeholder="Bağlı olduğunuz kurum">
+</div>
+<div class="form-group">
+<label for="yy_link">Akademik Profil Bağlantısı</label>
+<input type="url" id="yy_link" name="yy_link" placeholder="Academia, ORCID, kişisel site...">
+</div>
+</div>
+
+<div class="form-divider">📄 Çalışma Bilgileri</div>
+
+<div class="form-group">
+<label for="title">Çalışmanın / Projenin Adı *</label>
+<input type="text" id="title" name="title" required placeholder="Tam başlığı ile yazınız">
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label for="format">Çalışma Türü *</label>
+<select id="format" name="format" required>
+<option value="">Seçiniz...</option>
+<option value="Makale">Makale</option>
+<option value="Proje">Proje</option>
+<option value="Tez">Tez</option>
+<option value="Sunum-Bildiri">Sunum / Bildiri</option>
+<option value="Kitap">Kitap</option>
+<option value="Çalıştay-Sempozyum">Çalıştay / Sempozyum</option>
+<option value="Eğitim">Eğitim</option>
+<option value="Rapor">Rapor</option>
+</select>
+</div>
+<div class="form-group">
+<label for="date">Yayın / Tamamlanma Yılı</label>
+<input type="number" id="date" name="date" min="1990" max="2030" placeholder="örn: 2024">
+</div>
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label for="calisma_link">Çalışma Bağlantısı / DOI</label>
+<input type="url" id="calisma_link" name="calisma_link" placeholder="https://doi.org/... veya URL">
+</div>
+<div class="form-group">
+<label for="erisim">Erişim Durumu</label>
+<select id="erisim" name="erisim">
+<option value="">Seçiniz...</option>
+<option value="Açık Erişim">Açık Erişim</option>
+<option value="Abone Erişimi">Abone Erişimi</option>
+<option value="Sanal Erişim Yok">Sanal Erişim Yok</option>
+</select>
+</div>
+</div>
+
+<div class="form-divider">🔬 Kapsam ve Yöntem</div>
+
+<div class="form-group">
+<label for="description">Çalışma Özeti / Açıklaması *</label>
+<textarea id="description" name="description" required placeholder="Çalışmanızı kısaca tanıtın: amacı, kapsamı, kullandığı veri veya yöntem..."></textarea>
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label for="yontem">Kullanılan Yöntem(ler)</label>
+<input type="text" id="yontem" name="yontem" placeholder="örn: Mekânsal Analiz; Ağ Analizi (birden fazla için ; kullanın)">
+</div>
+<div class="form-group">
+<label for="subjects">Anahtar Kelimeler / Konular</label>
+<input type="text" id="subjects" name="subjects" placeholder="örn: Osmanlı; coğrafya; haritalama">
+</div>
+</div>
+
+<div class="form-divider">👥 Ekip ve Destek</div>
+
+<div class="form-group">
+<label for="calisma_ekibi">Çalışma Ekibi (varsa)</label>
+<input type="text" id="calisma_ekibi" name="calisma_ekibi" placeholder="Diğer araştırmacıların adlarını ; ile ayırarak yazın">
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label for="kurum">Araştırmanın Yapıldığı Kurum</label>
+<input type="text" id="kurum" name="kurum" placeholder="Üniversite veya araştırma merkezi">
+</div>
+<div class="form-group">
+<label for="fonlayici">Fonlayıcı / Destek (varsa)</label>
+<input type="text" id="fonlayici" name="fonlayici" placeholder="TÜBİTAK, AB, Üniversite fonu vb.">
+</div>
+</div>
+
+<div class="form-group">
+<label for="isbirligi">İşbirliği Yapılan Kurum/Kişi (varsa)</label>
+<input type="text" id="isbirligi" name="isbirligi" placeholder="Varsa işbirliği yapılan kurumlar veya kişiler">
+</div>
+
+<div style="margin-top:2rem; text-align:center;">
+<button type="submit" class="btn-submit">Gönder →</button>
+</div>
+
+</form>
+
+<div id="form-success" style="display:none; background:#e9f7ef; border-left:4px solid #27AE60; padding:1.2rem 1.5rem; border-radius:0 8px 8px 0; margin-top:1.5rem; text-align:center;">
+✅ <strong>Teşekkürler!</strong> Katkınız alındı, en kısa sürede değerlendireceğiz.
+</div>
+
+</div>
+
+<script>
+const form = document.getElementById('contributionForm');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const resp = await fetch(form.action, { method:'POST', body: data, headers:{'Accept':'application/json'} });
+    if (resp.ok) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      window.scrollTo({top: document.getElementById('form-success').offsetTop - 100, behavior:'smooth'});
+    }
+  });
+}
+</script>
+
+</div>
