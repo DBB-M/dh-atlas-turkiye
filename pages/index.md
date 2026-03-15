@@ -222,3 +222,58 @@ permalink: /
     {% include index/content.html %}
   </div>
 </div>
+
+<!-- SON EKLENENLER -->
+{%- assign son_eklenen = site.data[site.metadata] | where_exp: 'item','item.objectid' | where_exp: 'item','item.ekleme_tarihi' | sort: 'ekleme_tarihi' | reverse -%}
+<div class="se-widget-wrap">
+  <div class="se-widget-header">
+    <span class="se-widget-title">🆕 Son Eklenenler</span>
+    <a href="{{ '/son-eklenenler.html' | relative_url }}" class="se-widget-all">Tümünü Gör →</a>
+  </div>
+  <div class="se-widget-grid">
+    {% for item in son_eklenen limit: 4 %}
+    {%- assign fmt = item.format | default: "" -%}
+    {%- assign fmtLower = fmt | downcase -%}
+    {%- capture fc -%}{% if fmtLower contains 'makale' %}makale{% elsif fmtLower contains 'proje' %}proje{% elsif fmtLower contains 'tez' %}tez{% elsif fmtLower contains 'sunum' or fmtLower contains 'bildiri' %}sunum{% elsif fmtLower contains 'kitap' %}kitap{% elsif fmtLower contains 'rapor' %}rapor{% else %}diger{% endif %}{%- endcapture -%}
+    <a class="se-widget-card" href="{{ '/items/' | relative_url }}{{ item.objectid }}.html">
+      <div class="se-widget-stripe stripe-{{ fc | strip }}"></div>
+      <div class="se-widget-body">
+        <span class="se-widget-badge badge-{{ fc | strip }}">{{ item.format | split: ";" | first | strip }}</span>
+        <div class="se-widget-title-card">{{ item.title | truncate: 70 }}</div>
+        <div class="se-widget-meta">
+          {% if item.creator %}{{ item.creator | split: ";" | first | strip }}{% endif %}
+        </div>
+        <div class="se-widget-date">🗓 {{ item.ekleme_tarihi }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.se-widget-wrap { margin: 2rem 0; }
+.se-widget-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 2px solid #e0e8f0; }
+.se-widget-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1B4F72; border-left: 3px solid #2E86C1; padding-left: 0.6rem; }
+.se-widget-all { font-size: 0.78rem; font-weight: 600; color: #2E86C1; text-decoration: none; }
+.se-widget-all:hover { color: #1B4F72; }
+.se-widget-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.se-widget-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); overflow: hidden; text-decoration: none !important; color: inherit !important; display: block; transition: transform 0.18s, box-shadow 0.18s; }
+.se-widget-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(27,79,114,0.13); }
+.se-widget-stripe { height: 4px; }
+.stripe-makale { background: #1B4F72; } .stripe-proje { background: #1E8449; } .stripe-tez { background: #6C3483; } .stripe-sunum { background: #B7950B; } .stripe-kitap { background: #922B21; } .stripe-rapor { background: #117A65; } .stripe-diger { background: #566573; }
+.se-widget-body { padding: 0.9rem 1rem; }
+.se-widget-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.15rem 0.55rem; border-radius: 20px; margin-bottom: 0.5rem; }
+.badge-makale { background: #EBF5FB; color: #1B4F72; } .badge-proje { background: #E9F7EF; color: #1E8449; } .badge-tez { background: #F5EEF8; color: #6C3483; } .badge-sunum { background: #FEF9E7; color: #B7950B; } .badge-kitap { background: #FDEDEC; color: #922B21; } .badge-rapor { background: #E8F8F5; color: #117A65; } .badge-diger { background: #F2F3F4; color: #566573; }
+.se-widget-title-card { font-size: 0.88rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; margin-bottom: 0.4rem; }
+.se-widget-meta { font-size: 0.78rem; color: #777; margin-bottom: 0.4rem; }
+.se-widget-date { font-size: 0.7rem; color: #2E86C1; font-weight: 600; }
+.mc-inline-box { background: linear-gradient(135deg, #1B4F72, #2E86C1); border-radius: 10px; padding: 1.2rem 1.5rem; margin-top: 1rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.mc-inline-box p { color: #fff; font-size: 0.88rem; margin: 0; flex: 1; min-width: 180px; }
+.mc-inline-box p strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
+#mc_embed_inline { flex: 2; min-width: 260px; }
+#mc_embed_inline form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+#mc_embed_inline input[type=email] { flex: 1; min-width: 180px; padding: 0.5rem 0.85rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; background: rgba(255,255,255,0.12); color: #fff; font-size: 0.88rem; }
+#mc_embed_inline input[type=email]::placeholder { color: rgba(255,255,255,0.5); }
+#mc_embed_inline input[type=submit] { padding: 0.5rem 1.1rem; background: #fff; color: #1B4F72; border: none; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; white-space: nowrap; }
+#mc_embed_inline input[type=submit]:hover { background: #AED6F1; }
+</style>
