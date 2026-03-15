@@ -20,6 +20,8 @@
   {%- assign bg = '#922B21' %}{%- assign icon = '📚' %}{%- assign label = 'Kitap' %}
 {%- elsif fmt contains 'rapor' %}
   {%- assign bg = '#117A65' %}{%- assign icon = '📋' %}{%- assign label = 'Rapor' %}
+{%- elsif fmt contains 'çalıştay' or fmt contains 'sempozyum' %}
+  {%- assign bg = '#6E2F8A' %}{%- assign icon = '🎓' %}{%- assign label = 'Çalıştay / Sempozyum' %}
 {%- elsif fmt contains 'veri' or fmt contains 'data' %}
   {%- assign bg = '#1A5276' %}{%- assign icon = '🗄️' %}{%- assign label = 'Veri Seti' %}
 {%- else %}
