@@ -35,6 +35,7 @@
 .stripe-kitap    { background: linear-gradient(90deg,#922B21,#E74C3C); }
 .stripe-egitim   { background: linear-gradient(90deg,#1A5276,#2471A3); }
 .stripe-rapor    { background: linear-gradient(90deg,#117A65,#1ABC9C); }
+.stripe-calistay { background: linear-gradient(90deg,#6E2F8A,#9B59B6); }
 .stripe-diger    { background: linear-gradient(90deg,#626567,#95A5A6); }
 
 /* Format badge */
@@ -55,6 +56,7 @@
 .badge-kitap   { background:#FDEDEC; color:#922B21; }
 .badge-egitim  { background:#E8F8F5; color:#117A65; }
 .badge-rapor   { background:#E8F8F5; color:#117A65; }
+.badge-calistay { background:#F5EEF8; color:#6E2F8A; }
 .badge-diger   { background:#F2F3F4; color:#626567; }
 
 /* Kart içi düzenlemeler */
@@ -149,6 +151,7 @@ function fmtClass(fmt) {
   if (f.includes('kitap')) return 'kitap';
   if (f.includes('rapor')) return 'rapor';
   if (f.includes('eğitim') || f.includes('egitim')) return 'egitim';
+  if (f.includes('çalıştay') || f.includes('calistay') || f.includes('sempozyum')) return 'calistay';
   return 'diger';
 }
 
