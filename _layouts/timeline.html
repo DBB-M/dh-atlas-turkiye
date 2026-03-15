@@ -223,7 +223,7 @@ function tlFmtClass(fmt) {
     {% for item in inYear %}
     {%- assign fmt = item.format | default: "" -%}
     {%- assign fmtLower = fmt | downcase -%}
-    {%- capture fc -%}{% if fmtLower contains 'makale' %}makale{% elsif fmtLower contains 'proje' %}proje{% elsif fmtLower contains 'tez' %}tez{% elsif fmtLower contains 'sunum' or fmtLower contains 'bildiri' %}sunum{% elsif fmtLower contains 'kitap' %}kitap{% elsif fmtLower contains 'rapor' %}rapor{% elsif fmtLower contains 'egitim' or fmtLower contains 'eğitim' %}egitim{% else %}diger{% endif %}{%- endcapture -%}
+    {%- capture fc -%}{% if fmtLower contains 'makale' %}makale{% elsif fmtLower contains 'proje' %}proje{% elsif fmtLower contains 'tez' %}tez{% elsif fmtLower contains 'sunum' or fmtLower contains 'bildiri' %}sunum{% elsif fmtLower contains 'kitap' %}kitap{% elsif fmtLower contains 'rapor' %}rapor{% elsif fmtLower contains 'egitim' or fmtLower contains 'eğitim' %}egitim{% elsif fmtLower contains 'calistay' or fmtLower contains 'çalıştay' or fmtLower contains 'sempozyum' %}calistay{% else %}diger{% endif %}{%- endcapture -%}
     <a class="tl-card" href="{{ '/items/' | relative_url }}{% if item.parentid %}{{ item.parentid }}.html#{{ item.objectid }}{% else %}{{ item.objectid }}.html{% endif %}">
       <span class="tl-card-stripe stripe-{{ fc | strip }}"></span>
       <div class="tl-card-body">
