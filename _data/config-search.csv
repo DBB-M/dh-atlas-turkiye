@@ -2,12 +2,13 @@ field,index,display,facet,multi-valued
 title,true,true,false,false
 creator,true,true,true,true
 calisma_ekibi,true,true,true,true
-kurum,true,true,true,false
+kurum,true,true,true,true
 ulke_kurum,true,true,true,false
 format,true,true,true,false
 alan,true,true,true,false
 yontem,true,true,true,true
 durum,true,true,true,false
 erisim,true,true,true,false
-date,true,true,true,true
+date,true,true,true,false
+fonlayici,true,true,true,false
 description,true,false,false,false
