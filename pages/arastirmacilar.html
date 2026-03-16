@@ -92,6 +92,17 @@ function filterPeople() {
   renderGrid();
 }
 
+function toggleMore(uid) {
+  var el = document.getElementById('more-'+uid);
+  var btn = el.nextSibling;
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    btn.textContent = btn.textContent.replace('▾','▴').replace('daha','gizle');
+  } else {
+    el.style.display = 'none';
+    btn.textContent = btn.textContent.replace('▴','▾').replace('gizle','daha');
+  }
+}
 function showAll() { showLimit = filtered.length; renderGrid(); }
 
 function renderGrid() {
@@ -104,12 +115,15 @@ function renderGrid() {
   grid.innerHTML = shown.map(function(p){
     var badges = p.alanlar.slice(0,3).map(function(a){ return '<span class="ar-badge ar-badge-alan">'+a+'</span>'; }).join('');
     var wbadge = '<span class="ar-badge ar-badge-work">'+p.work_count+' çalışma</span>';
-    var works = p.works.slice(0,3).map(function(w){
+    var allWorks = p.works.map(function(w){
       var url='/dh-atlas-turkiye/items/'+w.id+'.html';
       var d = (w.date&&w.date!='nan') ? ' <span style="color:#aaa;">('+w.date+')</span>' : '';
       return '<div class="ar-work-item"><span class="ar-work-fmt" style="color:'+fmtColor(w.format)+'">'+w.format+'</span><a href="'+url+'" style="color:#444;text-decoration:none;">'+w.title+'</a>'+d+'</div>';
-    }).join('');
-    var more = p.work_count>3 ? '<div class="ar-work-item" style="color:#2E86C1;font-weight:600;">+'+(p.work_count-3)+' çalışma daha</div>' : '';
+    });
+    var works = allWorks.slice(0,3).join('');
+    var hiddenWorks = allWorks.slice(3).join('');
+    var uid = p.name.replace(/\s+/g,'-').replace(/[^a-zA-Z0-9-]/g,'');
+    var more = p.work_count>3 ? '<div id="more-'+uid+'" style="display:none;">'+hiddenWorks+'</div><div class="ar-work-item" style="color:#2E86C1;font-weight:600;cursor:pointer;" onclick="toggleMore(\''+uid+'\')">+'+(p.work_count-3)+' çalışma daha ▾</div>' : '';
     var link = p.yy_link ? '<a href="'+p.yy_link+'" target="_blank" class="ar-link">🔗 Akademik Profil</a>' : '';
     return '<div class="ar-card"><div class="ar-card-head"><p class="ar-card-name">'+p.name+'</p></div><div class="ar-card-body">'+badges+' '+wbadge+'<div class="ar-works">'+works+more+'</div>'+link+'</div></div>';
   }).join('');
