@@ -45,6 +45,32 @@ DH Atlas Türkiye, Marmara Üniversitesi bünyesinde faaliyet gösteren Dijital 
 
 Merkezimiz; eğitim programları, araştırma projeleri, çalıştaylar ve uluslararası iş birlikleri aracılığıyla Türkiye'deki araştırmacılara dijital araç ve yöntemleri tanıtmakta, kullanımlarını yaygınlaştırmaktadır. DH Atlas, bu misyonun somut bir ürünü olarak ortaya çıkmıştır.
 
+<p class="section-title">Veri ve Metodoloji</p>
+
+<div class="about-card"><p>
+📊 <strong>Kapsam:</strong> DH Atlas Türkiye, Türkiye merkezli araştırmacılar tarafından üretilen veya Türkiye odaklı dijital beşeri ve sosyal bilimler çalışmalarını kapsamaktadır. Yurt dışı kurumda görev yapan Türk araştırmacıların çalışmaları ile Türkiye'yi konu alan uluslararası projeler de dahil edilmektedir.
+</p></div>
+
+<div class="about-card"><p>
+✅ <strong>Dahil Edilen Çalışma Türleri:</strong> Hakemli makaleler, kitaplar ve kitap bölümleri, yüksek lisans ve doktora tezleri, araştırma projeleri, akademik sunumlar ve bildiriler, çalıştay ve sempozyumlar, dijital araç ve platform geliştirme projeleri, eğitim programları.
+</p></div>
+
+<div class="about-card"><p>
+❌ <strong>Kapsam Dışı:</strong> Dijital yöntem kullanmayan geleneksel beşeri bilimler çalışmaları, popüler yayınlar ve gazetecilik içerikleri, salt teknik bilgisayar bilimi çalışmaları (beşeri bilimler bağlamı olmaksızın).
+</p></div>
+
+<div class="about-card"><p>
+🔍 <strong>Veri Kaynakları:</strong> YÖK Ulusal Tez Merkezi, DergiPark, Google Scholar, Academia.edu, ORCID profilleri, kurum ve araştırmacı web siteleri, konferans ve çalıştay program kitapçıkları, araştırmacıların doğrudan katkıları (katkı formu aracılığıyla).
+</p></div>
+
+<div class="about-card"><p>
+⚙️ <strong>Veri Toplama Yöntemi:</strong> Veriler ağırlıklı olarak <strong>manuel tarama</strong> yoluyla toplanmaktadır. Anahtar kelime aramaları, kurum bazlı taramalar ve araştırmacı ağı aracılığıyla çalışmalar tespit edilmekte; ardından ekip tarafından değerlendirilerek standart formata dönüştürülmektedir. Crossref ve ORCID API'leri yardımcı kaynak olarak kullanılmaktadır.
+</p></div>
+
+<div class="about-card"><p>
+📅 <strong>Güncelleme:</strong> Katalog sürekli güncellenmekte olup yeni eklemeler <a href="{{ '/son-eklenenler.html' | relative_url }}" style="color:#1B4F72; font-weight:600;">son eklenenler sayfasından</a> takip edilebilir. Bir çalışmanın eklenmesini önermek veya mevcut kaydı düzeltmek için <a href="{{ '/katki.html' | relative_url }}" style="color:#1B4F72; font-weight:600;">katkı formunu</a> kullanabilirsiniz.
+</p></div>
+
 <!-- KATKI CTA -->
 <div class="katki-cta">
   <h3>Çalışmanızı Kataloğa Ekleyin ✚</h3>
