@@ -386,14 +386,29 @@ fetch(BASE + '/assets/data/metadata.json')
     console.log('Yüklenen kayıt:', allItems.length);
     buildFilters();
     render();
-    // URL'de hash varsa otomatik ara (subjects.html'den yönlendirme)
-    var hash = decodeURIComponent(window.location.hash.replace('#','').trim());
-    if(hash){
-      var input = document.getElementById('kesfet-search');
-      input.value = hash;
-      searchQ = hash;
-      render();
-    }
+    // URL hash'i yakala — subjects/locations sayfasından yönlendirme
+    (function(){
+      var rawHash = window.location.hash;
+      if(rawHash && rawHash.length > 1){
+        var term = decodeURIComponent(rawHash.substring(1)).trim();
+        if(term){
+          var inp = document.getElementById('kesfet-search');
+          inp.value = term;
+          searchQ = term;
+          render();
+          inp.scrollIntoView({behavior:'smooth', block:'center'});
+        }
+      }
+    // Hash değişince de ara
+window.addEventListener('hashchange', function(){
+  var term = decodeURIComponent(window.location.hash.substring(1)).trim();
+  if(term){
+    var inp = document.getElementById('kesfet-search');
+    inp.value = term;
+    searchQ = term;
+    render();
+  }
+});
   })
   .catch(e => {
     document.getElementById('kesfet-content').innerHTML =
@@ -602,29 +617,16 @@ document.getElementById('kesfet-sort').addEventListener('change', function(){
   render();
 });
 
-// ── 9. URL hash'ten arama ──
-// subjects.html veya locations.html'den #Terim şeklinde gelinince otomatik ara
-function applyHashSearch(){
-  var hash = decodeURIComponent(window.location.hash.replace('#','').trim());
-  if(hash){
-    var input = document.getElementById('kesfet-search');
-    input.value = hash;
-    searchQ = hash;
-    render();
-    // Arama kutusuna scroll et
-    input.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-}
 
-// Veri yüklendikten sonra hash kontrolü için render() içine hook ekle
-// Veri yüklenince hash'i uygula
-var _origFetch = window.fetch;
-// Veri yüklendiğinde çağrılacak — fetch callback içinde zaten render() çağrılıyor
-// Ek olarak: fetch tamamlanınca hash uygula
-
-// Hash değişirse de uygula (aynı sayfada farklı terime tıklanırsa)
+// Hash değişince de ara
 window.addEventListener('hashchange', function(){
-  applyHashSearch();
+  var term = decodeURIComponent(window.location.hash.substring(1)).trim();
+  if(term){
+    var inp = document.getElementById('kesfet-search');
+    inp.value = term;
+    searchQ = term;
+    render();
+  }
 });
 
 })();
