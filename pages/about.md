@@ -60,7 +60,7 @@ Merkezimiz; eğitim programları, araştırma projeleri, çalıştaylar ve ulusl
 </p></div>
 
 <div class="about-card"><p>
-🔍 <strong>Veri Kaynakları:</strong> YÖK Ulusal Tez Merkezi, DergiPark, Google Scholar, Academia.edu, ORCID profilleri, kurum ve araştırmacı web siteleri, konferans ve çalıştay program kitapçıkları, araştırmacıların doğrudan katkıları (katkı formu aracılığıyla).
+🔍 <strong>Veri Kaynakları:</strong> YÖK Ulusal Tez Merkezi, DergiPark, ULAKBİM HARMAN, Google Scholar, Worldcat, Academia.edu, ORCID profilleri, kurum ve araştırmacı web siteleri, konferans ve çalıştay program kitapçıkları, araştırmacıların doğrudan katkıları (katkı formu aracılığıyla).
 </p></div>
 
 <div class="about-card"><p>
