@@ -48,7 +48,7 @@ Merkezimiz; eğitim programları, araştırma projeleri, çalıştaylar ve ulusl
 <p class="section-title">Veri ve Metodoloji</p>
 
 <div class="about-card"><p>
-📊 <strong>Kapsam:</strong> DH Atlas Türkiye, Türkiye merkezli araştırmacılar tarafından üretilen veya Türkiye odaklı dijital beşeri ve sosyal bilimler çalışmalarını kapsamaktadır. Yurt dışı kurumda görev yapan Türk araştırmacıların çalışmaları ile Türkiye'yi konu alan uluslararası projeler de dahil edilmektedir.
+📊 <strong>Kapsam:</strong> DH Atlas Türkiye, Türkiye'de üretilen dijital beşeri ve sosyal bilimler çalışmalarını kapsamaktadır. Ayrıca Yurt dışı kurumda görev yapan araştırmacıların Türkiye'yi konu alan uluslararası çalışmaları da dahil edilmektedir.
 </p></div>
 
 <div class="about-card"><p>
