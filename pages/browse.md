@@ -618,16 +618,39 @@ document.getElementById('kesfet-sort').addEventListener('change', function(){
 });
 
 
-// Hash değişince de ara
-window.addEventListener('hashchange', function(){
-  var term = decodeURIComponent(window.location.hash.substring(1)).trim();
-  if(term){
+})();
+
+// Hash'ten arama — subjects/locations sayfasından yönlendirme
+// IIFE dışında çalışır, allItems global değil ama searchQ global
+// metadata.json yüklenince render() zaten çağrılıyor, hash sonradan uygulanır
+function applyHashToSearch(){
+  var rawHash = window.location.hash;
+  if(!rawHash || rawHash.length <= 1) return;
+  var term = decodeURIComponent(rawHash.substring(1)).trim();
+  if(!term) return;
+  var inp = document.getElementById('kesfet-search');
+  if(!inp) return;
+  inp.value = term;
+  // searchQ ve render global scope'dan erişilemez (IIFE içinde)
+  // Bu yüzden input event'i tetikle — browse.md'deki listener yakalar
+  inp.dispatchEvent(new Event('input'));
+}
+
+// Sayfa yüklenince: metadata hazır olana kadar bekle
+window.addEventListener('load', function(){
+  // metadata.json fetch async, kısa bekleme
+  var attempts = 0;
+  var interval = setInterval(function(){
+    attempts++;
     var inp = document.getElementById('kesfet-search');
-    inp.value = term;
-    searchQ = term;
-    render();
-  }
+    // Eğer veri yüklendiyse (count gösteriliyor)
+    var count = document.getElementById('kesfet-count');
+    if((count && count.textContent) || attempts > 20){
+      clearInterval(interval);
+      applyHashToSearch();
+    }
+  }, 200);
 });
 
-})();
+window.addEventListener('hashchange', applyHashToSearch);
 </script>
