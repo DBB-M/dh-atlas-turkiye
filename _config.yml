@@ -83,3 +83,7 @@ exclude:
   - LICENSE
   - SECURITY.md
   - Rakefile
+
+# Web kullanım istatistikleri
+google-analytics-id: G-PJS4GZ87P8
+  
