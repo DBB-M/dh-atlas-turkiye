@@ -31,7 +31,7 @@ credits: false
 
 <strong>DH Atlas Türkiye</strong>, Türkiye'de dijital beşeri ve sosyal bilimler alanında üretilen akademik çalışmaları—makaleler, projeler, tezler, sunumlar ve eğitimler—tek bir platformda bir araya getiren açık erişimli bir katalog ve harita projesidir.
 
-Bu atlas; araştırmacıların, kurumların ve çalışmaların görünürlüğünü artırmayı, alandaki boşlukları ve güçlü yönleri ortaya koymayı ve disiplinlerarası iş birliğinin önünü açmayı hedeflemektedir. 337 kayıt, 620 araştırmacı ve 13 disiplin alanını kapsayan veri tabanı, Türkiye'deki dijital beşeri bilimler ekosisteminin bugüne kadarki en kapsamlı haritalama girişimini oluşturmaktadır.
+Bu atlas; araştırmacıların, kurumların ve çalışmaların görünürlüğünü artırmayı, alandaki boşlukları ve güçlü yönleri ortaya koymayı ve disiplinlerarası iş birliğinin önünü açmayı hedeflemektedir. 350 kayıt, 660 araştırmacı ve 13 disiplin alanını kapsayan veri tabanı, Türkiye'deki dijital beşeri bilimler ekosisteminin bugüne kadarki en kapsamlı haritalama girişimini oluşturmaktadır.
 
 <div class="about-card">
 <p>💡 <strong>Misyonumuz:</strong> Dijital beşeri bilimlerin Türkiye'deki gelişimini takip etmek, araştırmacılar ve kurumlar arasında iletişim ve iş birliği imkânlarını güçlendirmek; bu büyüyen alana yönelik farkındalığı artırmak.</p>
@@ -48,7 +48,7 @@ Merkezimiz; eğitim programları, araştırma projeleri, çalıştaylar ve ulusl
 <p class="section-title">Veri ve Metodoloji</p>
 
 <div class="about-card"><p>
-📊 <strong>Kapsam:</strong> DH Atlas Türkiye, Türkiye'de üretilen dijital beşeri ve sosyal bilimler çalışmalarını kapsamaktadır. Ayrıca Yurt dışı kurumda görev yapan araştırmacıların Türkiye'yi konu alan uluslararası çalışmaları da dahil edilmektedir.
+📊 <strong>Kapsam:</strong> DH Atlas Türkiye, Türkiye merkezli araştırmacılar tarafından üretilen veya Türkiye odaklı dijital beşeri ve sosyal bilimler çalışmalarını kapsamaktadır. Yurt dışı kurumda görev yapan Türk araştırmacıların çalışmaları ile Türkiye'yi konu alan uluslararası projeler de dahil edilmektedir.
 </p></div>
 
 <div class="about-card"><p>
@@ -60,7 +60,7 @@ Merkezimiz; eğitim programları, araştırma projeleri, çalıştaylar ve ulusl
 </p></div>
 
 <div class="about-card"><p>
-🔍 <strong>Veri Kaynakları:</strong> YÖK Ulusal Tez Merkezi, DergiPark, ULAKBİM HARMAN, Google Scholar, Worldcat, Academia.edu, ORCID profilleri, kurum ve araştırmacı web siteleri, konferans ve çalıştay program kitapçıkları, araştırmacıların doğrudan katkıları (katkı formu aracılığıyla).
+🔍 <strong>Veri Kaynakları:</strong> YÖK Ulusal Tez Merkezi, DergiPark, Google Scholar, Academia.edu, ORCID profilleri, kurum ve araştırmacı web siteleri, konferans ve çalıştay program kitapçıkları, araştırmacıların doğrudan katkıları (katkı formu aracılığıyla).
 </p></div>
 
 <div class="about-card"><p>
