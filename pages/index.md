@@ -195,8 +195,8 @@ permalink: /
     <h1>DH Atlas <strong>Türkiye</strong></h1>
     <p>Türkiye Dijital Beşeri ve Sosyal Bilimler Haritası</p>
     <div class="dbb-stats">
-      <div class="dbb-stat"><div class="num">350</div><div class="lbl">Çalışma</div></div>
-      <div class="dbb-stat"><div class="num">660</div><div class="lbl">Araştırmacı</div></div>
+      <div class="dbb-stat"><div class="num">459</div><div class="lbl">Çalışma</div></div>
+      <div class="dbb-stat"><div class="num">444</div><div class="lbl">Araştırmacı</div></div>
       <div class="dbb-stat"><div class="num">13</div><div class="lbl">Disiplin</div></div>
       <div class="dbb-stat"><div class="num">7</div><div class="lbl">Yöntem</div></div>
     </div>
