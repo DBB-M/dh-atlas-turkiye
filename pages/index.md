@@ -196,7 +196,7 @@ permalink: /
     <p>Türkiye Dijital Beşeri ve Sosyal Bilimler Haritası</p>
     <div class="dbb-stats">
       <div class="dbb-stat"><div class="num">459</div><div class="lbl">Çalışma</div></div>
-      <div class="dbb-stat"><div class="num">444</div><div class="lbl">Araştırmacı</div></div>
+      <div class="dbb-stat"><div class="num">437</div><div class="lbl">Araştırmacı</div></div>
       <div class="dbb-stat"><div class="num">13</div><div class="lbl">Disiplin</div></div>
       <div class="dbb-stat"><div class="num">7</div><div class="lbl">Yöntem</div></div>
     </div>
